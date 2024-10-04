@@ -16,8 +16,20 @@ connect, address = server_socket.accept()
 recieve_data_from_client = connect.recv(1024)
 print("Client: " + recieve_data_from_client.decode("utf-8"))
 
-message = "Good morning client"
+message = "Hi client"
+print("Server: " + message)
 connect.send(message.encode("utf-8"))
+
+while True:
+    server_chat = input()
+    print("Server: " + server_chat)
+
+    if server_chat == "exit":
+        break
+
+    connect.send(server_chat.encode("utf-8"))
+    recieve_data_from_client = connect.recv(1024)
+    print("Client: " + recieve_data_from_client.decode("utf-8"))
 
 connect.close()
 
