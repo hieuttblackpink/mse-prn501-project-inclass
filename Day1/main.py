@@ -16,3 +16,10 @@ a, b, c = 5,7,"abc"
 
 #---
 Binh_phuong.ds_binh_phuong()
+
+#---
+l1 = [1, 2, 4, 9]
+l2 = [3, 5]
+l3 = l1 + l2
+l3 = sorted(l3)
+print(l3[0])
